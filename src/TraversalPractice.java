@@ -148,5 +148,11 @@ public class TraversalPractice {
      */
     public static int max(TreeNode node) {
         return Integer.MIN_VALUE;
+
+        if
+
+
+
+
     }
 }
