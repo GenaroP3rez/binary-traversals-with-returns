@@ -12,6 +12,18 @@ public class TraversalPractice {
      */
     public static void printLargeNodesPostOrder(TreeNode node) {
 
+         if (node == null){
+            return;
+        }
+        printLargeNodesPostOrder(node.left);
+        printLargeNodesPostOrder(node.right);
+
+        if (node. data > 1000){
+            System.out.println(node.data);
+        }
+    }
+
+
     }
 
     /**
@@ -28,14 +40,14 @@ public class TraversalPractice {
         if (node == null){
             return;
         }
-        printLargeNodesPostOder(node.left);
-        printLargeNodesPostOrder(node.right);
+        printNegativeNodesInOrder(nodes.left);  // wut error
 
-        if (node. data > 1000){
+        if (node.data < 0){
             System.out.println(node.data);
-        }
-    }
 
+        }
+        printNegativeNodesInOrder(node.right);
+    }
     /**
      * Prints only the odd values of nodes of a tree, traversing in pre-order.
      * 
@@ -44,10 +56,17 @@ public class TraversalPractice {
      * If the node is null, nothing is printed.
      * 
      * @param node the root of the tree
-     */
+     */ 
     public static void printOddNodesPreOrder(TreeNode node) {
-        
+        if (nodes == null){
+            return;
+        }
 
+        if (node.data % 2 != 0){
+            System.out.println(node.data);
+        }
+        printOddNodesPreOrder(node.left);
+        printOddNodesPreOrder(node.right);
     }
     
     /**
@@ -74,7 +93,17 @@ public class TraversalPractice {
      * @return the sum of the leaf node values
      */
     public static int sumLeafNodes(TreeNode node) {
-        return -1;
+        //return -1;
+
+        public sttatic int sumLeafNodes(Tree node){
+            if (node == null){
+                return 0;
+            }
+            if (node.left == null && node.right == null){
+                return node.data;
+            }
+            return sumLeafNodes(node.left) + sumLeafNodes(node.right);
+        }
     }
 
     /**
