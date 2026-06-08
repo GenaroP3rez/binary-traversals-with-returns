@@ -130,7 +130,14 @@ public class TraversalPractice {
      * @return the number of nodes in the tree
      */
     public static int size(TreeNode node) {
-        return -1;
+        //return -1;
+        if (node == null){
+            return 0;
+        }
+
+        return 1 + size( node.left) + size(node.right);
+
+
     }
 
     /**
@@ -157,7 +164,14 @@ public class TraversalPractice {
      * @return the count of branch nodes in the tree
      */
     public static int branchCount(TreeNode node) {
-        return -1;
+        //return -1;
+
+        public static int branchount(Tree node){
+            if (node == null){
+                return 1;
+            }
+            return 1 + branchCount(node.left) + branchCount(node.right);
+        }
     }
 
 
